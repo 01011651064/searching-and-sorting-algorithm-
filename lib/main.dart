@@ -229,6 +229,7 @@ class _MyAppState extends State<MyApp> {
                                       
                                       items: <String>[
                                         'Binary Search',
+                                      //  '------------------',
                                         'Linear Search'
                                       ].map<DropdownMenuItem<String>>(
                                           (String value) {
@@ -275,6 +276,7 @@ class _MyAppState extends State<MyApp> {
 
                                       items: <String>[
                                         'Merge Sort',
+                                        // '------------------',
                                         'Quick Sort'
                                       ].map<DropdownMenuItem<String>>(
                                           (String value) {
@@ -299,9 +301,19 @@ class _MyAppState extends State<MyApp> {
                                   ),
                                 ],
                               ),
-                              if (sortTime != null)
+                              if (selectedSort == 'Merge Sort' && 
+                               sortTime != null)
                                 Text(
-                                  "Sort time: ${sortTime!.inMicroseconds} microseconds",
+                                  "Merge Sort time: ${sortTime!.inMicroseconds} microseconds",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 233, 161, 7),
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                  if (selectedSort == 'Quick Sort' && 
+                                   sortTime != null)
+                                Text(
+                                  "Quick Sort time: ${sortTime!.inMicroseconds} microseconds",
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 233, 161, 7),
                                     fontSize: 18,
